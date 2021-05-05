@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JATS Break adder</title>
+    <link rel="shortcut icon" href="https://journals.opscidia.com/public/journals/4/favicon_en_US.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="functions.js" defer></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <h1>JATS Break adder&nbsp;<i>by Loïc Etienne</i><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="Profil GitHub" onclick="redirect('https://github.com/LoicE5')"></h1>
+    <input type="file" id="file" multiple accept=".xml" onchange="readFile(this)">
+    <br><br>
+    <button onclick="process(fileContent)">Add breaks</button>
+    <div id="result"></div>
+</body>
+</html>
