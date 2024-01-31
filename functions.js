@@ -1,24 +1,3 @@
-function syncFetch(url){
-    const async = false
-
-    let xhr = new XMLHttpRequest()
-
-    xhr.open('GET',url,async)
-    xhr.send()
-
-    let response = xhr.responseText
-    if(response == "" || response == undefined || response == null){
-        let resStatus
-        if(response == ""){
-            resStatus = "an empty string"
-        } else {
-            resStatus = response
-        }
-        console.warn(`There is an error in your syncFetch request.\nThe response is ${resStatus}. Please check your URL, which is ${url}.`)
-    }
-    return response
-}
-
 function isLowerCase(input){
     if(input == input.toLowerCase()){
         return true;
@@ -59,6 +38,9 @@ function process(file){
     }
 
     const breaker = "<break/>";
+
+    if (!file.includes('<body>') || !file.includes('</body>'))
+        return alert('Please input a JATS-formatted file.')
 
     let body = file.split('<body>'); // Split the XML for an array with [0] = the head, and [1] = body inner content and the footer
     body = body[1].split('</body>'); // Split the body with [0] = the content we actually want & [1] = the footer
